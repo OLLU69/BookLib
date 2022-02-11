@@ -1,0 +1,47 @@
+<mapping>
+    <class name="ua.ukrposhta.booklib.Authors">
+        <field name="authors" type="ua.ukrposhta.booklib.Author" collection="arraylist">
+            <bind-xml name="author"/>
+        </field>
+    </class>
+
+    <class name="ua.ukrposhta.booklib.Author" identity="id">
+        <map-to xml="author"/>
+
+        <field name="id" type="long">
+            <bind-xml name="id" node="element"/>
+        </field>
+        <field name="firstName" type="string">
+            <bind-xml name="firstName" node="element"/>
+        </field>
+        <field name="lastName" type="string">
+            <bind-xml name="lastName" node="element"/>
+        </field>
+        <field name="version" type="integer">
+            <bind-xml name="version" node="element"/>
+        </field>
+        <field name="books" type="ua.ukrposhta.booklib.Book" collection="set">
+            <bind-xml name="books" node="element"/>
+        </field>
+    </class>
+
+    <class name="ua.ukrposhta.booklib.Books">
+        <field name="books" type="ua.ukrposhta.booklib.Book" collection="arraylist">
+            <bind-xml name="book"/>
+        </field>
+    </class>
+
+    <class name="ua.ukrposhta.booklib.Book" identity="id">
+        <map-to xml="book"/>
+
+        <field name="id" type="long">
+            <bind-xml name="id" node="element"/>
+        </field>
+        <field name="title" type="string">
+            <bind-xml name="title" node="element"/>
+        </field>
+        <field name="version" type="integer">
+            <bind-xml name="version" node="element"/>
+        </field>
+    </class>
+</mapping>
